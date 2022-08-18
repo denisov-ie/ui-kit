@@ -1,0 +1,75 @@
+@import url(common.css);
+
+body {
+    background-color: #E5E5E5;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    width: 62.5rem;
+    height: 62.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3rem 4rem 15rem 15rem;
+    gap: 1rem 1rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "checkbox__container radio__container searchbar__container"
+    "button__container button__container searchbar__container"
+    "button__container button__container input__container"
+    "dropdown__container dropdown__container dropdown__container";
+}
+
+.container_common-style {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 0.0625rem dashed var(--color-day-dark-blue);
+    border-radius: 1rem;
+    background-color: var(--color-day-white-blue);
+}
+
+.button__container-inner {
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border: none;
+}
+
+.checkbox__container {
+    flex-direction: row;
+    grid-area: checkbox__container;
+}
+
+.radio__container {
+    flex-direction: row;
+    grid-area: radio__container;
+}
+
+.searchbar__container {
+    flex-direction: column;
+    grid-area: searchbar__container;
+    border: 0.0625rem dashed var(--color-day-dark-blue);
+}
+
+.input__container {
+    flex-direction: column;
+    grid-area: input__container;
+    border: 0.0625rem dashed var(--color-day-dark-blue);
+}
+
+.button__container {
+    flex-direction: row;
+    grid-area: button__container;
+    border: 0.0625rem dashed var(--color-day-dark-blue);
+}
+
+.dropdown__container {
+    grid-area: dropdown__container;
+    border: 0.0625rem dashed var(--color-day-dark-blue);
+}

@@ -1,0 +1,111 @@
+@import url(common.css);
+
+.input {
+    height: 3.5rem;
+}
+
+.input_for-order {
+    width: 16rem;
+}
+
+.input_for-page-select {
+    width: 8rem;
+}
+
+.input__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.input__label {
+    margin-bottom: 0.5rem;
+    line-height: inherit;
+    color: var(--color-day-black);
+}
+
+.input__area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    background-color: var(--color-day-white);
+    border: 0.0625rem solid var(--color-blue);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    box-sizing: border-box;
+}
+
+.input__input {
+    display: flex;
+    border: 0;
+    padding: 0;
+    line-height: inherit;
+    background-color: inherit;
+    outline: 0;
+    font: inherit;
+    color: var(--color-day-black);
+    width: 100%;
+}
+
+.input__input::placeholder {
+    color: var(--color-day-light-blue);
+}
+
+.input__button {
+    display: none;
+    padding: 0.25rem;
+    border: none;
+    color: inherit;
+    stroke-width: 0.125rem;
+    background-color: transparent;
+}
+
+.input-button__icon-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+}
+
+.input-button__icon-cross {
+    display: none;
+    width: 0.5625rem;
+    stroke: var(--color-blue);
+}
+
+.input-button__icon-cross_enabled {
+    display: initial;
+}
+
+.input-button__icon-lock {
+    display: none;
+    width: 0.875rem;
+    height: 0.875rem;
+    fill: var(--color-day-black);
+}
+
+.input-button__icon-lock_enabled {
+    display: initial;
+}
+
+.input__button:hover {
+    stroke-width: 0.1875rem;
+    transition: stroke-width 0.25s ease-in;
+}
+
+.input__button_cross-active {
+    display: flex;
+}
+
+.input__button_lock-active {
+    display: flex;
+}
+
+.input__area_cross-active {
+    border-color: var(--color-red);
+}
+
+.input__area_lock-active {
+    background-color: var(--color-day-light-blue);
+}
