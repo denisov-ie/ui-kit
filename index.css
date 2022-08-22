@@ -2,6 +2,7 @@
 
 body {
     background-color: var(--color-day-white-blue);
+    font-family: inherit;
 }
 
 .wrapper {
