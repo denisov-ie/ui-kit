@@ -1,29 +1,30 @@
 @import url(common.css);
 
 .input {
-    height: 3.5rem;
-}
-
-.input_for-order {
-    width: 16rem;
-}
-
-.input_for-page-select {
-    width: 8rem;
-}
-
-.input__field {
     display: flex;
     flex-direction: column;
+    height: 3.5rem;
+    width: 100%;
+}
+
+.input_empty .input__button {
+    display: none;
+}
+
+.input_disabled .input__field {
+    background-color: var(--color-day-light-blue);
+}
+
+.input_incorrect .input__field {
+    border-color: var(--color-red);
 }
 
 .input__label {
-    margin-bottom: 0.5rem;
     line-height: inherit;
     color: var(--color-day-black);
 }
 
-.input__area {
+.input__field {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,10 +33,11 @@
     border: 0.0625rem solid var(--color-blue);
     border-radius: 0.25rem;
     padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    margin-top: 0.5rem;
     box-sizing: border-box;
 }
 
-.input__input {
+.input__area {
     display: flex;
     border: 0;
     padding: 0;
@@ -47,65 +49,42 @@
     width: 100%;
 }
 
-.input__input::placeholder {
+.input__area::placeholder {
     color: var(--color-day-light-blue);
 }
 
-.input__button {
-    display: none;
-    padding: 0.25rem;
-    border: none;
-    color: inherit;
+.input__icon-cross {
+    display: block;
+    height: 0.5625rem;
+    width: 0.5625rem;
+    stroke: var(--color-day-light-blue);
     stroke-width: 0.125rem;
-    background-color: transparent;
 }
 
-.input-button__icon-holder {
+.input__icon-lock {
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    min-width: 1rem;
+    fill: var(--color-day-black);
+    padding: 0.25rem;
+    margin: 0 auto;
+}
+
+.input__button {
     display: flex;
+    padding: 0.25rem;
+    height: 1.5rem;
+    min-width: 1.5rem;
     align-items: center;
     justify-content: center;
-    width: 1rem;
-    height: 1rem;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.input-button__icon-cross {
-    display: none;
-    width: 0.5625rem;
-    stroke: var(--color-blue);
-}
-
-.input-button__icon-cross_enabled {
-    display: initial;
-}
-
-.input-button__icon-lock {
-    display: none;
-    width: 0.875rem;
-    height: 0.875rem;
-    fill: var(--color-day-black);
-}
-
-.input-button__icon-lock_enabled {
-    display: initial;
-}
-
-.input__button:hover {
+.input__button:hover .input__icon-cross {
     stroke-width: 0.1875rem;
     transition: stroke-width 0.25s ease-in;
-}
-
-.input__button_cross-active {
-    display: flex;
-}
-
-.input__button_lock-active {
-    display: flex;
-}
-
-.input__area_cross-active {
-    border-color: var(--color-red);
-}
-
-.input__area_lock-active {
-    background-color: var(--color-day-light-blue);
 }

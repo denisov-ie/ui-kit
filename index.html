@@ -13,688 +13,569 @@
     <title>UI Kit</title>
 </head>
 <body>
+<!--Prepared svg images-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="checkmark" viewBox="0 0 16 16">
+        <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
+    </symbol>
+    <symbol id="dot" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="4" stroke="none"/>
+    </symbol>
+    <symbol id="abort" viewBox="0 0 16 16">
+        <path d="M12.5 12.5L3.5 3.5" fill="none"/>
+        <circle cx="8" cy="8" r="6.5" fill="none"/>
+    </symbol>
+    <symbol id="bin" viewBox="0 0 16 16">
+        <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
+              fill="none" stroke-linecap="round"/>
+        <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="filter" viewBox="0 0 16 16">
+        <path d="M12 4H4V5.5L7 8.5V12L9 13V8.5L12 5.5V4Z" stroke="none"/>
+    </symbol>
+    <symbol id="locked" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
+              stroke="none"/>
+        <path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
+              stroke="none"/>
+    </symbol>
+    <symbol id="moon" viewBox="0 0 16 16">
+        <path d="M8 15C12.0269 15 15.5 11.5021 15 7.5C14.7688 10.0468 12.6071 12 10 12C7.23858 12 5 9.76142 5 7C5 4.23858 7.23858 2 10 2C11 2 12 2.5 12 2.5C11 1.5 10 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z"
+              stroke="none"/>
+    </symbol>
+    <symbol id="pencil" viewBox="0 0 16 16">
+        <path d="M6 14.5H15" fill="none"/>
+        <path d="M5 13L1.5 14.5L3 11M5 13L3 11M5 13L12 6M3 11L10 4M11 3L12.5 1.5L14.5 3.5L13 5M11 3L13 5M11 3L10 4M13 5L12 6M12 6L10 4"
+              fill="none"/>
+    </symbol>
+    <symbol id="refresh" viewBox="0 0 16 16">
+        <path d="M2.50251 7.5V8.5C2.50251 10.75 4.75251 13.5 8.00251 13.5C10 13.5 11.6187 12.5 12.6 11" fill="none"/>
+        <path d="M13.5 8.5V7.5C13.5 5.25 11.25 2.5 7.99997 2.5C6 2.5 4.38135 3.5 3.4 5" fill="none"/>
+        <path d="M4.5 9.5L2.50254 7.5L0.752533 9.75" fill="none"/>
+        <path d="M11.5 6.5L13.5 8.5L15.25 6.25" fill="none"/>
+    </symbol>
+    <symbol id="search" viewBox="0 0 16 16">
+        <path d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5"
+              fill="none"/>
+    </symbol>
+    <symbol id="sun" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="4" stroke="none"/>
+        <path d="M15 9L16 8L15 7H13V9H15Z" stroke="none"/>
+        <path d="M1 9L0 8L1 7H3V9H1Z" stroke="none"/>
+        <path d="M7 15L8 16L9 15V13H7V15Z" stroke="none"/>
+        <path d="M7 1L8 0L9 1V3H7V1Z" stroke="none"/>
+        <path d="M12.5 14H14L14 12.5L12.5 11L11 12.5L12.5 14Z" stroke="none"/>
+        <path d="M2 3.5L2 2L3.5 2L5 3.5L3.5 5L2 3.5Z" stroke="none"/>
+        <path d="M3.5 14H2L2 12.5L3.5 11L5 12.5L3.5 14Z" stroke="none"/>
+        <path d="M14 3.5V2L12.5 2L11 3.5L12.5 5L14 3.5Z" stroke="none"/>
+    </symbol>
+    <symbol id="v_arrow" viewBox="0 0 16 16">
+        <path d="M5 6H11V6.5L8.25 11H7.75L5 6.5V6Z" stroke="none"/>
+    </symbol>
+    <symbol id="x-large" viewBox="0 0 16 16">
+        <path d="M1 15L15 1M1 1L15 15" fill="none"/>
+    </symbol>
+    <symbol id="x-medium" viewBox="0 0 16 16">
+        <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none"/>
+    </symbol>
+</svg>
+<!--Component visualization starts here-->
 <div class="wrapper">
     <div class="container">
-        <div class="checkbox__container container_common-style" id="checkbox-container">
-            <label>Checkbox</label>
+        <!--Container with checkboxes-->
+        <div class="container__item container__item_checkbox">
+            <label><b>Checkbox</b></label>
+            <!--Checkbox empty-->
             <div class="checkbox">
                 <label class="checkbox__label">
-                    <div class="checkbox__field">
-                        <input class="checkbox__area" type="checkbox"/>
-                        <span class="checkbox__text"></span>
-                        <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                        </svg>
-                    </div>
+                    <input class="checkbox__area" type="checkbox"/>
+                    <svg class="checkbox__icon">
+                        <use xlink:href="#checkmark"/>
+                    </svg>
+                    <span class="checkbox__text"></span>
                 </label>
             </div>
+            <!--Checkbox checked-->
             <div class="checkbox">
                 <label class="checkbox__label">
-                    <div class="checkbox__field">
-                        <input class="checkbox__area" type="checkbox" checked/>
-                        <span class="checkbox__text"></span>
-                        <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                        </svg>
-                    </div>
+                    <input class="checkbox__area" type="checkbox" checked/>
+                    <svg class="checkbox__icon">
+                        <use xlink:href="#checkmark"/>
+                    </svg>
+                    <span class="checkbox__text"></span>
                 </label>
             </div>
         </div>
-        <div class="radio__container container_common-style">
-            <label>Radio</label>
+        <!--Container with radio buttons-->
+        <div class="container__item container__item_radio">
+            <label><b>Radio</b></label>
+            <!--Radio empty-->
             <div class="radio">
                 <label class="radio__label">
-                    <div class="radio__field">
-                        <input class="radio__area" type="radio" name="test"/>
-                        <span class="radio__text"></span>
-                        <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="8" cy="8" r="4" stroke="none"/>
-                        </svg>
-                    </div>
+                    <input class="radio__area" type="radio" name="test"/>
+                    <svg class="radio__icon">
+                        <use xlink:href="#dot"/>
+                    </svg>
+                    <span class="radio__text"></span>
                 </label>
             </div>
+            <!--Radio checked-->
             <div class="radio">
                 <label class="radio__label">
-                    <div class="radio__field">
-                        <input class="radio__area" type="radio" name="test" checked/>
-                        <span class="radio__text"></span>
-                        <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="8" cy="8" r="4" stroke="none"/>
-                        </svg>
-                    </div>
+                    <input class="radio__area" type="radio" name="test" checked/>
+                    <svg class="radio__icon">
+                        <use xlink:href="#dot"/>
+                    </svg>
+                    <span class="radio__text"></span>
                 </label>
             </div>
         </div>
-        <div class="searchbar__container container_common-style">
-            <label>Searchbar</label>
-            <div class="searchbar">
-                <label>
+        <!--Container with searchbars-->
+        <div class="container__item container__item_searchbar">
+            <!--Wrapper for dynamic searchbar width demonstration-->
+            <div class="searchbar__wrapper">
+                <label><b>Searchbar</b></label>
+                <!--Searchbar empty-->
+                <div class="searchbar searchbar_empty">
                     <div class="searchbar__field">
-                        <div class="searchbar__area">
-                            <div class="searchbar__icon-holder">
-                                <svg class="searchbar__icon-search" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5"
-                                          fill="none"/>
-                                </svg>
-                            </div>
-                            <input class="searchbar__input" placeholder="Номер заказа или ФИО">
-                        </div>
+                        <svg class="searchbar__icon-search">
+                            <use xlink:href="#search"/>
+                        </svg>
+                        <input class="searchbar__area" placeholder="Номер заказа или ФИО">
                         <button class="searchbar__button">
-                            <div class="searchbar-button__icon-holder">
-                                <svg class="searchbar-button__icon-cross" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 15L15 1M1 1L15 15" fill="none"/>
-                                </svg>
-                            </div>
+                            <svg class="searchbar__icon-cross">
+                                <use xlink:href="#x-large"/>
+                            </svg>
                         </button>
                     </div>
-                </label>
-            </div>
-            <div class="searchbar">
-                <label>
+                </div>
+                <!--Searchbar filled-->
+                <div class="searchbar searchbar_filled">
                     <div class="searchbar__field">
-                        <div class="searchbar__area">
-                            <div class="searchbar__icon-holder">
-                                <svg class="searchbar__icon-search" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5"
-                                          fill="none"/>
-                                </svg>
-                            </div>
-                            <input class="searchbar__input" value="50744" placeholder="Номер заказа или ФИО">
-                        </div>
-                        <button class="searchbar__button searchbar__button_cross-active">
-                            <div class="searchbar-button__icon-holder">
-                                <svg class="searchbar-button__icon-cross" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 15L15 1M1 1L15 15" fill="none"/>
-                                </svg>
-                            </div>
+                        <svg class="searchbar__icon-search">
+                            <use xlink:href="#search"/>
+                        </svg>
+                        <input class="searchbar__area" value="50744" placeholder="Номер заказа или ФИО">
+                        <button class="searchbar__button">
+                            <svg class="searchbar__icon-cross">
+                                <use xlink:href="#x-large"/>
+                            </svg>
                         </button>
                     </div>
-                </label>
+                </div>
             </div>
         </div>
-        <div class="input__container container_common-style">
-            <label>Input</label>
-            <div class="input input_for-order">
-                <label>
-                    <div class="input__field">
-                        <label class="input__label">Дата и время заказа</label>
-                        <div class="input__area">
-                            <input class="input__input" placeholder="Введите">
+        <!--Container with inputs-->
+        <div class="container__item container__item_input">
+            <!--Wrapper for dynamic input width demonstration-->
+            <div class="input__wrapper">
+                <label><b>Input</b></label>
+                <!--Input empty-->
+                <div class="input input_empty">
+                    <label class="input__label">Дата и время заказа
+                        <div class="input__field">
+                            <input class="input__area" placeholder="Введите">
                             <button class="input__button">
-                                <div class="input-button__icon-holder">
-                                    <svg class="input-button__icon-cross" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 15L15 1M1 1L15 15" fill="none"/>
-                                    </svg>
-                                    <svg class="input-button__icon-lock" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                                              stroke="none"/>
-                                        <path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                                              stroke="none"/>
-                                    </svg>
-                                </div>
+                                <svg class="input__icon-cross">
+                                    <use xlink:href="#x-large"/>
+                                </svg>
                             </button>
                         </div>
-                    </div>
-                </label>
-            </div>
-            <div class="input input_for-order">
-                <label>
-                    <div class="input__field">
-                        <label class="input__label">Дата и время заказа</label>
-                        <div class="input__area input__area_cross-active">
-                            <input class="input__input" value="06.12.2021" placeholder="Введите">
-                            <button class="input__button input__button_cross-active">
-                                <div class="input-button__icon-holder">
-                                    <svg class="input-button__icon-cross input-button__icon-cross_enabled" viewBox="0 0 16 16"
-                                         fill="none" stroke="#8055FF"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 15L15 1M1 1L15 15" fill="none"/>
-                                    </svg>
-                                    <svg class="input-button__icon-lock" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                                              stroke="none"/>
-                                        <path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                                              stroke="none"/>
-                                    </svg>
-                                </div>
+                    </label>
+                </div>
+                <!--Input incorrect-->
+                <div class="input input_incorrect">
+                    <label class="input__label">Дата и время заказа
+                        <div class="input__field">
+                            <input class="input__area" value="06.12.2021" placeholder="Введите">
+                            <button class="input__button">
+                                <svg class="input__icon-cross">
+                                    <use xlink:href="#x-large"/>
+                                </svg>
                             </button>
                         </div>
-                    </div>
-                </label>
-            </div>
-            <div class="input input_for-order">
-                <label>
-                    <div class="input__field">
-                        <label class="input__label">Дата и время заказа</label>
-                        <div class="input__area input__area_lock-active">
-                            <input class="input__input" value="06.12.2021" placeholder="Введите" readonly>
-                            <button class="input__button input__button_lock-active">
-                                <div class="input-button__icon-holder">
-                                    <svg class="input-button__icon-cross" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 15L15 1M1 1L15 15" fill="none"/>
-                                    </svg>
-                                    <svg class="input-button__icon-lock input-button__icon-lock_enabled" viewBox="0 0 16 16"
-                                         fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                                              stroke="none"/>
-                                        <path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                                              stroke="none"/>
-                                    </svg>
-                                </div>
-                            </button>
+                    </label>
+                </div>
+                <!--Input disabled-->
+                <div class="input input_disabled">
+                    <label class="input__label">Дата и время заказа
+                        <div class="input__field">
+                            <input class="input__area" value="06.12.2021" placeholder="Введите" readonly>
+                            <svg class="input__icon-lock">
+                                <use xlink:href="#locked"/>
+                            </svg>
                         </div>
-                    </div>
-                </label>
+                    </label>
+                </div>
             </div>
         </div>
-        <div class="button__container container_common-style">
-            <div class="button__container-inner">
-                <label>Button</label>
+        <!--Container with buttons-->
+        <div class="container__item container__item_button">
+            <div class="button__wrapper">
+                <label><b>Button</b></label>
             </div>
-            <div class="button__container-inner">
-                <div class="button button_icon-text">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="button-area__text">Text here</div>
-                        </div>
+            <!--Wrapper for separating button blocks for a better view, it is not part of the button-->
+            <div class="button__wrapper">
+                <!--Button with text and icon, blue colored, medium size-->
+                <div class="button button_icon_text button_blue button_medium">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_text-only">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__text">Text here</div>
-                        </div>
+                <!--Button with text, blue colored, medium size-->
+                <div class="button button_text button_blue button_medium">
+                    <button class="button__area">
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_icon-only">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                <!--Button with icon, blue colored, medium size-->
+                <div class="button button_icon button_blue button_medium">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
                     </button>
                 </div>
-                <div class="button button_icon-text-and-small">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="button-area__text">Text here</div>
-                        </div>
+                <!--Button with text and icon, blue colored, small size-->
+                <div class="button button_icon_text button_blue button_small">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_text-only-and-small">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__text">Text here</div>
-                        </div>
+                <!--Button with text, blue colored, small size-->
+                <div class="button button_text button_blue button_small">
+                    <button class="button__area">
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_icon-only-and-small">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                <!--Button with icon, blue colored, small size-->
+                <div class="button button_icon button_blue button_small">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
                     </button>
                 </div>
             </div>
-            <div class="button__container-inner">
-                <div class="button button_text-blue button_icon-blue button_transparent button_icon-text">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="button-area__text">Text here</div>
-                        </div>
+            <div class="button__wrapper">
+                <!--Button with icon and text, blue reverse colored, medium size-->
+                <div class="button button_icon_text button_blue_reverse button_medium">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_text-blue button_transparent button_text-only">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__text">Text here</div>
-                        </div>
+                <!--Button with text, blue reverse colored, medium size-->
+                <div class="button button_text button_blue_reverse button_medium">
+                    <button class="button__area">
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_icon-blue button_transparent button_icon-only">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                <!--Button with icon, blue reverse colored, medium size-->
+                <div class="button button_icon button_blue_reverse button_medium">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
                     </button>
                 </div>
-                <div class="button button_text-blue button_icon-blue button_transparent button_icon-text-and-small">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="button-area__text">Text here</div>
-                        </div>
+                <!--Button with icon and text, blue reverse colored, small size-->
+                <div class="button button_icon_text button_blue_reverse button_small">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_text-blue button_transparent button_text-only-and-small">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__text">Text here</div>
-                        </div>
+                <!--Button with text, blue reverse colored, small size-->
+                <div class="button button_text button_blue_reverse button_small">
+                    <button class="button__area">
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_icon-blue button_transparent button_icon-only-and-small">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                <!--Button with icon, blue reverse colored, small size-->
+                <div class="button button_icon button_blue_reverse button_small">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
                     </button>
                 </div>
             </div>
-            <div class="button__container-inner">
-                <div class="button button_text-black button_icon-black button_transparent">
-                    <button class="button-area button-area_icon-text">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="button-area__text">Text here</div>
-                        </div>
+            <div class="button__wrapper">
+                <!--Button with icon and text, black reverse colored, medium size-->
+                <div class="button button_icon_text button_black_reverse button_medium">
+                    <button class="button__area button-area_icon-text">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_text-black button_transparent">
-                    <button class="button-area button-area_text-only">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__text">Text here</div>
-                        </div>
+                <!--Button with text, black reverse colored, medium size-->
+                <div class="button button_text button_black_reverse button_medium">
+                    <button class="button__area button-area_text-only">
+                        <div class="button__text">Text here</div>
                     </button>
                 </div>
-                <div class="button button_icon-black button_transparent button_icon-only">
-                    <button class="button-area">
-                        <div class="button-area__wrapper">
-                            <div class="button-area__icon-holder">
-                                <svg class="button-area__icon" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5"
-                                          fill="none" stroke-linecap="round"/>
-                                    <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                <!--Button with icon, black reverse colored, medium size-->
+                <div class="button button_icon button_black_reverse button_medium">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"/>
+                        </svg>
                     </button>
                 </div>
             </div>
         </div>
-        <div class="dropdown__container container_common-style">
-            <label>Dropdown</label>
-            <div class="dropdown">
-                <form class="dropdown__form dropdown__form_with-list">
-                    <ul class="dropdown__list">
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="checkbox">
-                                    <label class="checkbox__label">
-                                        <div class="checkbox__field">
-                                            <input class="checkbox__area" type="checkbox"/>
-                                            <span class="checkbox__text checkbox__text_enabled">Новый</span>
-                                            <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="checkbox">
-                                    <label class="checkbox__label">
-                                        <div class="checkbox__field">
-                                            <input class="checkbox__area" type="checkbox"/>
-                                            <span class="checkbox__text checkbox__text_enabled">Рассчет</span>
-                                            <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="checkbox">
-                                    <label class="checkbox__label">
-                                        <div class="checkbox__field">
-                                            <input class="checkbox__area" type="checkbox" checked/>
-                                            <span class="checkbox__text checkbox__text_enabled">Подтвержден</span>
-                                            <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="checkbox">
-                                    <label class="checkbox__label">
-                                        <div class="checkbox__field">
-                                            <input class="checkbox__area" type="checkbox"/>
-                                            <span class="checkbox__text checkbox__text_enabled">Отложен</span>
-                                            <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="checkbox">
-                                    <label class="checkbox__label">
-                                        <div class="checkbox__field">
-                                            <input class="checkbox__area" type="checkbox"/>
-                                            <span class="checkbox__text checkbox__text_enabled">Выполнен</span>
-                                            <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="checkbox">
-                                    <label class="checkbox__label">
-                                        <div class="checkbox__field">
-                                            <input class="checkbox__area" type="checkbox"/>
-                                            <span class="checkbox__text checkbox__text_enabled">Отменен</span>
-                                            <svg class="checkbox__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                    </ul>
-                </form>
-            </div>
-            <div class="dropdown">
-                <form class="dropdown__form dropdown__form_with-list">
-                    <ul class="dropdown__list">
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="radio">
-                                    <label class="radio__label">
-                                        <div class="radio__field">
-                                            <input class="radio__area radio__area_hidden" type="radio" name="dropdown-selector"
-                                                   value="new"/>
-                                            <span class="radio__text radio__text_enabled">Новый</span>
-                                            <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="4" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="radio">
-                                    <label class="radio__label">
-                                        <div class="radio__field">
-                                            <input class="radio__area radio__area_hidden" type="radio" name="dropdown-selector"
-                                                   value="calculation"/>
-                                            <span class="radio__text radio__text_enabled">Рассчет</span>
-                                            <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="4" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="radio">
-                                    <label class="radio__label">
-                                        <div class="radio__field">
-                                            <input class="radio__area radio__area_hidden" type="radio" name="dropdown-selector"
-                                                   value="accepted"/>
-                                            <span class="radio__text radio__text_enabled">Подтвержден</span>
-                                            <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="4" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="radio">
-                                    <label class="radio__label">
-                                        <div class="radio__field">
-                                            <input class="radio__area radio__area_hidden" type="radio" name="dropdown-selector"
-                                                   value="paused"/>
-                                            <span class="radio__text radio__text_enabled">Отложен</span>
-                                            <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="4" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="radio">
-                                    <label class="radio__label">
-                                        <div class="radio__field">
-                                            <input class="radio__area radio__area_hidden" type="radio" name="dropdown-selector"
-                                                   value="done"/>
-                                            <span class="radio__text radio__text_enabled">Выполнен</span>
-                                            <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="4" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                        <label>
-                            <li class="dropdown__item">
-                                <div class="radio">
-                                    <label class="radio__label">
-                                        <div class="radio__field">
-                                            <input class="radio__area radio__area_hidden" type="radio" name="dropdown-selector"
-                                                   value="cancelled"/>
-                                            <span class="radio__text radio__text_enabled">Отменен</span>
-                                            <svg class="radio__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="4" stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </label>
-                    </ul>
-                </form>
-            </div>
-            <div class="dropdown">
-                <form class="dropdown__form dropdown__form_with-input">
-                    <div class="input input_for-page-select">
-                        <label>
-                            <div class="input__field">
-                                <label class="input__label">Номер страницы</label>
-                                <div class="input__area">
-                                    <input class="input__input" placeholder="Введите номер">
-                                    <button class="input__button">
-                                        <div class="input-button__icon-holder">
-                                            <svg class="input-button__icon-cross" viewBox="0 0 16 16" fill="none" stroke="#8055FF"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 15L15 1M1 1L15 15" fill="none"/>
-                                            </svg>
-                                            <svg class="input-button__icon-lock" viewBox="0 0 16 16" fill="#8055FF" stroke="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                      d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                                                      stroke="none"/>
-                                                <path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                                                      stroke="none"/>
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </div>
+        <!--Container with dropdowns-->
+        <div class="container__item container__item_dropdown">
+            <label><b>Dropdown</b></label>
+            <!--Dropdown with multiple status-->
+            <div class="dropdown dropdown_with_list">
+                <ul class="dropdown__list">
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="checkbox checkbox_with_text">
+                                <label class="checkbox__label">
+                                    <input class="checkbox__area" type="checkbox"/>
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"/>
+                                    </svg>
+                                    <span class="checkbox__text">Новый</span>
+                                </label>
                             </div>
-                        </label>
-                    </div>
-                </form>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="checkbox checkbox_with_text">
+                                <label class="checkbox__label">
+                                    <input class="checkbox__area" type="checkbox"/>
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"/>
+                                    </svg>
+                                    <span class="checkbox__text">Рассчет</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="checkbox checkbox_with_text">
+                                <label class="checkbox__label">
+                                    <input class="checkbox__area" type="checkbox" checked/>
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"/>
+                                    </svg>
+                                    <span class="checkbox__text">Подтвержден</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="checkbox checkbox_with_text">
+                                <label class="checkbox__label">
+                                    <input class="checkbox__area" type="checkbox"/>
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"/>
+                                    </svg>
+                                    <span class="checkbox__text">Отложен</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="checkbox checkbox_with_text">
+                                <label class="checkbox__label">
+                                    <input class="checkbox__area" type="checkbox"/>
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"/>
+                                    </svg>
+                                    <span class="checkbox__text">Выполнен</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="checkbox checkbox_with_text">
+                                <label class="checkbox__label">
+                                    <input class="checkbox__area" type="checkbox"/>
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"/>
+                                    </svg>
+                                    <span class="checkbox__text">Отменен</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                </ul>
             </div>
-            <div class="dropdown">
-                <div class="dropdown__form dropdown__form_with-dialog">
-                    <span class="dropdown__title">Удалить n записей?</span>
-                    <div class="button button_text-blue button_icon-blue button_transparent button_icon-text-and-small">
-                        <button class="button-area">
-                            <div class="button-area__wrapper">
-                                <div class="button-area__text">Удалить</div>
+            <!--Dropdown with single status-->
+            <div class="dropdown dropdown_with_list">
+                <ul class="dropdown__list">
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="radio radio_with_text_only">
+                                <label class="radio__label">
+                                    <input class="radio__area" type="radio"
+                                           name="dropdown-selector"
+                                           value="new"/>
+                                    <svg class="radio__icon">
+                                        <use xlink:href="#dot"/>
+                                    </svg>
+                                    <span class="radio__text">Новый</span>
+                                </label>
                             </div>
-                        </button>
-                    </div>
-                    <div class="button button_icon-text-and-small">
-                        <button class="button-area">
-                            <div class="button-area__wrapper">
-                                <div class="button-area__text">Отмена</div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="radio radio_with_text_only">
+                                <label class="radio__label">
+                                    <input class="radio__area" type="radio"
+                                           name="dropdown-selector"
+                                           value="calculation"/>
+                                    <svg class="radio__icon">
+                                        <use xlink:href="#dot"/>
+                                    </svg>
+                                    <span class="radio__text">Рассчет</span>
+                                </label>
                             </div>
-                        </button>
-                    </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="radio radio_with_text_only">
+                                <label class="radio__label">
+                                    <input class="radio__area" type="radio"
+                                           name="dropdown-selector"
+                                           value="accepted" checked/>
+                                    <svg class="radio__icon">
+                                        <use xlink:href="#dot"/>
+                                    </svg>
+                                    <span class="radio__text">Подтвержден</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="radio radio_with_text_only">
+                                <label class="radio__label">
+                                    <input class="radio__area" type="radio"
+                                           name="dropdown-selector"
+                                           value="paused"/>
+                                    <svg class="radio__icon">
+                                        <use xlink:href="#dot"/>
+                                    </svg>
+                                    <span class="radio__text">Отложен</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="radio radio_with_text_only">
+                                <label class="radio__label">
+                                    <input class="radio__area" type="radio"
+                                           name="dropdown-selector"
+                                           value="done"/>
+                                    <svg class="radio__icon">
+                                        <use xlink:href="#dot"/>
+                                    </svg>
+                                    <span class="radio__text">Выполнен</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                    <label>
+                        <li class="dropdown__item">
+                            <div class="radio radio_with_text_only">
+                                <label class="radio__label">
+                                    <input class="radio__area" type="radio"
+                                           name="dropdown-selector"
+                                           value="cancelled"/>
+                                    <svg class="radio__icon">
+                                        <use xlink:href="#dot"/>
+                                    </svg>
+                                    <span class="radio__text">Отменен</span>
+                                </label>
+                            </div>
+                        </li>
+                    </label>
+                </ul>
+            </div>
+            <!--Dropdown with page selection-->
+            <div class="dropdown dropdown_with_input">
+                <div class="input input_empty">
+                    <label class="input__label">Номер страницы
+                        <div class="input__field">
+                            <input class="input__area" placeholder="Введите номер">
+                            <button class="input__button">
+                                <svg class="input__icon-cross">
+                                    <use xlink:href="#x-large"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </label>
                 </div>
             </div>
-            <div class="dropdown">
-                <div class="dropdown__form dropdown__form_with-dialog">
-                    <span class="dropdown__title">Выберите тему</span>
-                    <div class="button button_text-blue button_icon-blue button_transparent button_icon-text-and-small">
-                        <button class="button-area">
-                            <div class="button-area__wrapper">
-                                <div class="button-area__icon-holder">
-                                    <svg class="button-area__icon button-area_icon_blue" viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="8" cy="8" r="4" stroke="none"/>
-                                        <path d="M15 9L16 8L15 7H13V9H15Z" stroke="none"/>
-                                        <path d="M1 9L0 8L1 7H3V9H1Z" stroke="none"/>
-                                        <path d="M7 15L8 16L9 15V13H7V15Z" stroke="none"/>
-                                        <path d="M7 1L8 0L9 1V3H7V1Z" stroke="none"/>
-                                        <path d="M12.5 14H14L14 12.5L12.5 11L11 12.5L12.5 14Z" stroke="none"/>
-                                        <path d="M2 3.5L2 2L3.5 2L5 3.5L3.5 5L2 3.5Z" stroke="none"/>
-                                        <path d="M3.5 14H2L2 12.5L3.5 11L5 12.5L3.5 14Z" stroke="none"/>
-                                        <path d="M14 3.5V2L12.5 2L11 3.5L12.5 5L14 3.5Z" stroke="none"/>
-                                    </svg>
-                                </div>
-                                <div class="button-area__text button-area__text_blue">Светлая</div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="button button_icon-text-and-small">
-                        <button class="button-area">
-                            <div class="button-area__wrapper">
-                                <div class="button-area__icon-holder">
-                                    <svg class="button-area__icon" viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 15C12.0269 15 15.5 11.5021 15 7.5C14.7688 10.0468 12.6071 12 10 12C7.23858 12 5 9.76142 5 7C5 4.23858 7.23858 2 10 2C11 2 12 2.5 12 2.5C11 1.5 10 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke="none"/>
-                                    </svg>
-                                </div>
-                                <div class="button-area__text">Темная</div>
-                            </div>
-                        </button>
-                    </div>
+            <!--Dropdown with deletion dialog-->
+            <div class="dropdown dropdown_with_dialog">
+                <span class="dropdown__title">Удалить n записей?</span>
+                <div class="button button_text button_blue_reverse button_small">
+                    <button class="button__area">
+                        <div class="button__text">Удалить</div>
+                    </button>
+                </div>
+                <div class="button button_text button_blue button_small">
+                    <button class="button__area">
+                        <div class="button__text">Отмена</div>
+                    </button>
+                </div>
+            </div>
+            <!--Dropdown with theme switcher-->
+            <div class="dropdown dropdown_with_dialog">
+                <span class="dropdown__title">Выберите тему</span>
+                <div class="button button_icon_text button_blue_reverse button_small">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#sun"/>
+                        </svg>
+                        <div class="button__text">Светлая</div>
+                    </button>
+                </div>
+                <div class="button button_icon_text button_blue button_small">
+                    <button class="button__area">
+                        <svg class="button__icon">
+                            <use xlink:href="#moon"/>
+                        </svg>
+                        <div class="button__text">Темная</div>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
+<div class="button button_text button_blue button_medium switcher">
+    <button class="button__area">
+        <div class="button__text">Переключить тему</div>
+    </button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
