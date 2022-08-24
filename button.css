@@ -2,9 +2,15 @@
 
 .button {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    border: none;
+    font: inherit;
+    cursor: pointer;
 }
 
-.button_blue .button__area {
+.button_blue {
     background-color: var(--color-blue);
     color: var(--color-day-white);
 }
@@ -14,35 +20,28 @@
     fill: var(--color-day-white);
 }
 
-.button_blue_reverse .button__area {
+.button_blue-reverse {
     background-color: transparent;
     color: var(--color-blue);
 }
 
-.button_blue_reverse .button__icon {
+.button_blue-reverse .button__icon {
     stroke: var(--color-blue);
     fill: var(--color-blue);
 }
 
-.button_black_reverse .button__area {
+.button_black-reverse {
     background-color: transparent;
     color: var(--color-day-black);
 }
 
-.button_black_reverse .button__icon {
+.button_black-reverse .button__icon {
     stroke: var(--color-day-black);
     fill: var(--color-day-black);
 }
 
-.button_medium .button__area {
+.button_medium {
     height: 2rem;
-}
-
-.button_medium.button_icon_text .button__area {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-}
-
-.button_medium.button_text .button__area {
     padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
@@ -50,19 +49,12 @@
     margin-left: 0.5rem;
 }
 
-.button_medium.button_icon .button__area {
+.button_medium.button_icon-only {
     padding: 0.5rem;
 }
 
-.button_small .button__area {
+.button_small {
     height: 1.5rem;
-}
-
-.button_small.button_icon_text .button__area {
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-}
-
-.button_small.button_text .button__area {
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 
@@ -70,8 +62,24 @@
     margin-left: 0.25rem;
 }
 
-.button_small.button_icon .button__area {
+.button_small.button_icon-only {
     padding: 0.25rem;
+}
+
+.button:hover {
+    box-shadow: 0 0 0 0.0625rem var(--color-day-dark-blue);
+}
+
+.button:active {
+    box-shadow: 0 0 0 0.0625rem var(--color-day-medium-blue);
+}
+
+.button_black-reverse.button:hover {
+    box-shadow: 0 0 0 0.0625rem var(--color-day-light-black);
+}
+
+.button_black-reverse.button:active {
+    box-shadow: 0 0 0 0.0625rem var(--color-day-medium-black);
 }
 
 .button__icon {
@@ -86,34 +94,6 @@
     font: inherit;
     color: inherit;
     white-space: nowrap;
-}
-
-.button__area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.25rem;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.button__area:hover {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-dark-blue);
-}
-
-.button__area:active {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-medium-blue);
-}
-
-.button_black_reverse .button__area:hover {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-light-black);
-}
-
-.button_black_reverse .button__area:active {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-medium-black);
 }
 
 

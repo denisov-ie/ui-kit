@@ -12,27 +12,27 @@
     box-sizing: border-box;
 }
 
-.dropdown_with_list {
+.dropdown_with-list {
     height: 13rem;
     padding: 0.5rem 0;
 }
 
-.dropdown_with_input {
+.dropdown_with-input {
     height: 5.5rem;
     padding: 1rem;
 }
 
-.dropdown_with_dialog {
+.dropdown_with-dialog {
     height: 7rem;
     padding: 1rem;
     align-items: center;
 }
 
-.dropdown_with_dialog button:first-child {
-    margin-bottom: 0.5rem;
+.dropdown_with-dialog button:last-child {
+    margin-top: 0.5rem;
 }
 
-.dropdown_with_dialog .button__area {
+.dropdown_with-dialog .button {
     width: 8rem !important;
 }
 

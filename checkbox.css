@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.checkbox_with_text .checkbox__text {
+.checkbox_with-text .checkbox__text {
     display: flex;
     margin-left: 0.5rem;
 }

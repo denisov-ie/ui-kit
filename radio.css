@@ -4,15 +4,15 @@
     display: flex;
 }
 
-.radio_with_text_only .radio__area {
+.radio_with-text-only .radio__area {
     display: none;
 }
 
-.radio_with_text_only .radio__icon {
+.radio_with-text-only .radio__icon {
     display: none;
 }
 
-.radio_with_text_only .radio__text {
+.radio_with-text-only .radio__text {
     display: flex;
     margin-left: 0;
 }
