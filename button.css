@@ -1,99 +1,97 @@
 @import url(common.css);
 
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.25rem;
-    border: none;
-    font: inherit;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  border: none;
+  font: inherit;
+  cursor: pointer;
 }
 
 .button_blue {
-    background-color: var(--color-blue);
-    color: var(--color-day-white);
+  background-color: var(--color-blue);
+  color: var(--color-day-white);
 }
 
 .button_blue .button__icon {
-    stroke: var(--color-day-white);
-    fill: var(--color-day-white);
+  stroke: var(--color-day-white);
+  fill: var(--color-day-white);
 }
 
 .button_blue-reverse {
-    background-color: transparent;
-    color: var(--color-blue);
+  background-color: transparent;
+  color: var(--color-blue);
 }
 
 .button_blue-reverse .button__icon {
-    stroke: var(--color-blue);
-    fill: var(--color-blue);
+  stroke: var(--color-blue);
+  fill: var(--color-blue);
 }
 
 .button_black-reverse {
-    background-color: transparent;
-    color: var(--color-day-black);
+  background-color: transparent;
+  color: var(--color-day-black);
 }
 
 .button_black-reverse .button__icon {
-    stroke: var(--color-day-black);
-    fill: var(--color-day-black);
+  stroke: var(--color-day-black);
+  fill: var(--color-day-black);
 }
 
 .button_medium {
-    height: 2rem;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+  height: 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .button_medium .button__icon + .button__text {
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .button_medium.button_icon-only {
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .button_small {
-    height: 1.5rem;
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  height: 1.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 
 .button_small .button__icon + .button__text {
-    margin-left: 0.25rem;
+  margin-left: 0.25rem;
 }
 
 .button_small.button_icon-only {
-    padding: 0.25rem;
+  padding: 0.25rem;
 }
 
 .button:hover {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-dark-blue);
+  box-shadow: 0 0 0 0.0625rem var(--color-day-dark-blue);
 }
 
 .button:active {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-medium-blue);
+  box-shadow: 0 0 0 0.0625rem var(--color-day-medium-blue);
 }
 
 .button_black-reverse.button:hover {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-light-black);
+  box-shadow: 0 0 0 0.0625rem var(--color-day-light-black);
 }
 
 .button_black-reverse.button:active {
-    box-shadow: 0 0 0 0.0625rem var(--color-day-medium-black);
+  box-shadow: 0 0 0 0.0625rem var(--color-day-medium-black);
 }
 
 .button__icon {
-    display: flex;
-    width: 1rem;
-    height: 1rem;
+  display: flex;
+  width: 1rem;
+  height: 1rem;
 }
 
 .button__text {
-    height: 1rem;
-    line-height: inherit;
-    font: inherit;
-    color: inherit;
-    white-space: nowrap;
+  height: 1rem;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  white-space: nowrap;
 }
-
-
