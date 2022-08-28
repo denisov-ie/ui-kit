@@ -1,0 +1,28 @@
+{
+  "name": "ui-kit",
+  "version": "1.0.0",
+  "description": "<a href=\"https://denisov-ie.github.io/ui-kit/\">Тут можно посмотреть (на github.io)</a>",
+  "main": "script.js",
+  "scripts": {
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisov-ie/ui-kit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisov-ie/ui-kit/issues"
+  },
+  "homepage": "https://github.com/denisov-ie/ui-kit#readme",
+  "dependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
+}
